@@ -90,4 +90,16 @@
           method: "GET",
           dataType: "json",
           success: function(data){
+            // lokasi
+            $("#negara").text(data.location?.country ?? "-");
+            $("#provinsi").text(data.location?.region ?? "-");
+            $("#kecamatan").text(data.location?.name ?? "-");
+            $("#longitude").text(data.location?.lon ?? "-");
+            $("#latitude").text(data.location?.lat ?? "-");
+
+            // cuaca
+            $("#suhuC").text(data.current?.temp_c ?? "-");
+            $("#suhuF").text(data.current?.temp_f ?? "-");
+            $("#kelembapan").text(data.current?.humidity ?? "-");
+          },
           
