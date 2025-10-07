@@ -102,4 +102,13 @@
             $("#suhuF").text(data.current?.temp_f ?? "-");
             $("#kelembapan").text(data.current?.humidity ?? "-");
           },
-          
+          error: function(xhr, status, err){
+            console.error("AJAX error:", status, err, xhr.responseText);
+            alert("Kota tidak ditemukan atau terjadi kesalahan. Cek console (Ctrl+Shift+J) untuk detail.");
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
